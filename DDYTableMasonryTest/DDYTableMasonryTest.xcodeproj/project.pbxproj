@@ -23,6 +23,7 @@
 		A41AAB1920CF622100A26818 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A41AAB0720CF622100A26818 /* main.m */; };
 		A41AAB1A20CF622100A26818 /* TestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A41AAB0920CF622100A26818 /* TestCell.m */; };
 		A41AAB1B20CF622100A26818 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A41AAB0B20CF622100A26818 /* ViewController.m */; };
+		A41AAB1D20CF70CA00A26818 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = A41AAB1C20CF70CA00A26818 /* Delete.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		A41AAB0920CF622100A26818 /* TestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCell.m; sourceTree = "<group>"; };
 		A41AAB0A20CF622100A26818 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A41AAB0B20CF622100A26818 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A41AAB1C20CF70CA00A26818 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Delete.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				A41AAB0920CF622100A26818 /* TestCell.m */,
 				A41AAB0A20CF622100A26818 /* ViewController.h */,
 				A41AAB0B20CF622100A26818 /* ViewController.m */,
+				A41AAB1C20CF70CA00A26818 /* Delete.png */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A41AAB1D20CF70CA00A26818 /* Delete.png in Resources */,
 				A41AAB1820CF622100A26818 /* Info.plist in Resources */,
 				A41AAB1720CF622100A26818 /* LaunchScreen.storyboard in Resources */,
 			);
