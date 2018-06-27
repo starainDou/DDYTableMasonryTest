@@ -6,4 +6,5 @@
 * iOS11 左滑删除按钮加图标（高度达到一定显示文字加图标否则只图标）
 * iOS11 从一边滑到对边自动触发事件
 
+
 ![DDYTableMasonryTest.png](https://github.com/starainDou/DDYDemoImage/blob/master/DDYTableMasonryTest.png)
