@@ -87,9 +87,19 @@
     return _testLabel;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    [self.testLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+- (void)setModel:(TestModel *)model {
+    _model = model;
+    [self.rightViewArray[0] setHidden:model.view0Hidden];
+    [self.rightViewArray[1] setHidden:model.view1Hidden];
+    [self.rightViewArray[2] setHidden:model.view2Hidden];
+    [self.rightViewArray[3] setHidden:model.view3Hidden];
+    [self.rightViewArray[4] setHidden:model.view4Hidden];
+    [self.rightViewArray[5] setHidden:model.view5Hidden];
+    [self setViewsConstraints];
+}
+
+- (void)setViewsConstraints {
+    [self.testLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.contentView).offset(DDYMargin);
         make.top.mas_equalTo(self.contentView).offset(DDYMargin);
         make.width.mas_equalTo(80);
@@ -99,28 +109,18 @@
     [self ddy_remakeConstraints:self.rightViewArray];
 }
 
-- (void)setModel:(TestModel *)model {
-    _model = model;
-    [self.rightViewArray[0] setHidden:model.view0Hidden];
-    [self.rightViewArray[1] setHidden:model.view1Hidden];
-    [self.rightViewArray[2] setHidden:model.view2Hidden];
-    [self.rightViewArray[3] setHidden:model.view3Hidden];
-    [self.rightViewArray[4] setHidden:model.view4Hidden];
-    [self.rightViewArray[5] setHidden:model.view5Hidden];
-}
-
 - (void)ddy_remakeConstraints:(NSArray *)views {
     UIView *lastView = nil;
     NSArray *reverseArray = [[views reverseObjectEnumerator] allObjects];
     for (UIView *tempView in reverseArray) {
         if (lastView) {
-            [tempView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            [tempView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerY.equalTo(self.contentView.mas_centerY);
                 make.width.height.mas_equalTo(30);
                 make.right.mas_equalTo(lastView.mas_left).offset(-DDYMargin);
             }];
         } else if (!tempView.hidden) {
-            [tempView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            [tempView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerY.equalTo(self.contentView.mas_centerY);
                 make.width.height.mas_equalTo(30);
                 make.right.mas_equalTo(self.contentView).offset(-DDYMargin);
