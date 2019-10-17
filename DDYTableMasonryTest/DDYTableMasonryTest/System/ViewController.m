@@ -57,12 +57,12 @@
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault
                                                                             title:@"删除"
                                                                           handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-                                                                              __strong __typeof__ (weakSelf)strongSelf = weakSelf;
-                                                                              dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                                                                                  [sectionArray removeObjectAtIndex:indexPath.row];
-                                                                                  [strongSelf.tableView reloadData];
-                                                                              });
-                                                                          }];
+        __strong __typeof__ (weakSelf)strongSelf = weakSelf;
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [sectionArray removeObjectAtIndex:indexPath.row];
+            [strongSelf.tableView reloadData];
+        });
+    }];
     return @[deleteAction];
 }
 
