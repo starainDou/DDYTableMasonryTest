@@ -136,4 +136,22 @@
     NSLog(@"click : %ld", (long)sender.tag);
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.layer.cornerRadius = 6;
+    self.clipsToBounds = YES;
+    [self dealDeleteButton];
+}
+
+- (void)dealDeleteButton {
+    UIView *superView = self.superview;
+    if ([superView isKindOfClass:NSClassFromString(@"_UITableViewCellSwipeContainerView")]) {
+        UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, superView.bounds.size.width - 4, superView.bounds.size.height - 4) byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight  cornerRadii:CGSizeMake(6, 6)];
+        CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+        maskLayer.frame = CGRectMake(0, 0, superView.bounds.size.width - 4, superView.bounds.size.height - 4);//superView.bounds;
+        maskLayer.path = maskPath.CGPath;
+        superView.layer.mask = maskLayer;
+    }
+}
+
 @end
